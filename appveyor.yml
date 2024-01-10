@@ -3,12 +3,14 @@ image:
 - macOS
 - Ubuntu
 
+
+
 skip_branch_with_pr: true
 stack: python 3.10
 
 environment:
   GITHUB_TOKEN:
-    secure: jl2p1J7pzZ6ZabkI4EIK5FGdPXi8B0V/kS22jahQYPrEl8A/yhqf8VyCJIV7ZLSE
+    secure: Ku/FYwxdKQUydZmrEiXjUDCl69FvPwkVwPELgXyBJh6kk+TOohnazmZUGW0wSLax
 
 install:
 - pip install -r requirements.txt
@@ -24,6 +26,7 @@ deploy:
   auth_token: $(GITHUB_TOKEN)
   on:
     APPVEYOR_REPO_TAG: true
+    
 
 #
 #   Windows package
