@@ -16,7 +16,7 @@ install:
 - pip install -r requirements.txt
 
 build_script:
-- flet pack main.py --name brapp  --product-name brapp --product-version "1.0" --copyright "Copyright (c) 2022 YourCompany Inc."
+- flet pack main.py --name counter --product-name counter --product-version "1.2.3" --copyright "Copyright (c) 2022 YourCompany Inc."
 
 test: off
 
@@ -26,7 +26,6 @@ deploy:
   auth_token: $(GITHUB_TOKEN)
   on:
     APPVEYOR_REPO_TAG: true
-    
 
 #
 #   Windows package
@@ -38,10 +37,10 @@ for:
     - image: Visual Studio 2019
 
   after_build:
-  - 7z a brapp-windows.zip %CD%\dist\*.exe
+  - 7z a counter-windows.zip %CD%\dist\*.exe
 
   artifacts:
-  - path: brapp-windows.zip
+  - path: counter-windows.zip
 
 #
 #   macOS package
@@ -52,10 +51,10 @@ for:
     - image: macOS
 
   after_build:
-  - tar -czvf brapp-macos.tar.gz -C dist brapp.app
+  - tar -czvf counter-macos.tar.gz -C dist counter.app
 
   artifacts:
-  - path: brapp-macos.tar.gz
+  - path: counter-macos.tar.gz
 
 #
 #   Linux package
@@ -66,7 +65,7 @@ for:
     - image: Ubuntu
 
   after_build:
-  - tar -czvf counter-linux.tar.gz -C dist brapp
+  - tar -czvf counter-linux.tar.gz -C dist counter
 
   artifacts:
-  - path: brapp-linux.tar.gz
+  - path: counter-linux.tar.gz
