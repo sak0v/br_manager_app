@@ -271,5 +271,5 @@ def main(page: Page):
     page.go(page.route)
    
 
-ft.app(target=main,assets_dir="assets")
+ft.app(target=main)
 #ft.app(target=main, view=ft.AppView.WEB_BROWSER,assets_dir="./app/assets")
